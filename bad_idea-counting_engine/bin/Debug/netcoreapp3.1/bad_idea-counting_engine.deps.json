@@ -1,0 +1,33 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "bad_idea-counting_engine/1.0.0": {
+        "runtime": {
+          "bad_idea-counting_engine.dll": {}
+        }
+      },
+      "Counting Engine/1.0.0": {
+        "runtime": {
+          "Counting Engine.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "bad_idea-counting_engine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Counting Engine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
