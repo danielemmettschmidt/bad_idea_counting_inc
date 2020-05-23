@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "SPY_Simulator/1.0.0": {
+        "dependencies": {
+          "Counting_Engine": "1.0.0"
+        },
+        "runtime": {
+          "SPY_Simulator.dll": {}
+        }
+      },
+      "Counting_Engine/1.0.0": {
+        "runtime": {
+          "Counting_Engine.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SPY_Simulator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Counting_Engine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32.SafeHandles;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq.Expressions;
@@ -8,47 +9,97 @@ using System.Threading;
 namespace Bad_Idea_Counting
 {
 
-    class Counting_Engine
+    public class Counting_Engine
     {
-        public byte[,] values;
+        private int engineNumberOfValues;
 
-        private int surgePot;
+        private int engineNumberOfVariables;
+
+        private long engineDepth; 
 
         List<byte[]> chartRows;
 
-        public Counting_Engine()
+        public Counting_Engine(int NumberOfValues, int NumberOfVariables, bool construct)
         {
-            this.chartRows = new List<byte[]>();
-
-            int input = 9;
-
-            for (int ii = 1; ii <= ToPower(input, input); ii++)
-            {
-                byte[] bs = buildRow(ii, input, input);
-
-                chartRows.Add(bs);
-
-                string display = (ii + "");
-
-                foreach (byte b in bs)
-                {
-                    display = display + "  " + b + "  ";
-                }
-
-                Console.WriteLine(display);
-            }
-
+            initialize(NumberOfValues, NumberOfVariables, construct, false);
         }
 
-        public byte[] buildRow(long y, int numberOfValues, int numberOfVariables)
+        public Counting_Engine(int NumberOfValues, int NumberOfVariables, bool construct, bool display)
         {
-            byte[] row = new byte[numberOfVariables];
+            initialize(NumberOfValues, NumberOfVariables, construct, display);
+        }
 
-            int endianII = 0, placeII = numberOfVariables;
+        private void initialize(int NumberOfValues, int NumberOfVariables, bool construct, bool display)
+        {
+            this.engineNumberOfValues = NumberOfValues;
+
+            this.engineNumberOfVariables = NumberOfVariables;
+
+            this.engineDepth = ToPower(this.engineNumberOfValues, this.engineNumberOfVariables);
+
+            this.chartRows = new List<byte[]>();
+
+            if (construct == true)
+            {
+                for (int ii = 1; ii <= this.engineDepth; ii++)
+                {
+                    byte[] bs = buildRow(ii);
+
+                    chartRows.Add(bs);
+
+                    if (display == true)
+                    {
+                        string displayString = (ii + OpeningSpaces(ii, 15));
+
+                        foreach (byte b in bs)
+                        {
+                            displayString = displayString + MiddleSpaces(b);
+                        }
+
+                        Console.WriteLine(displayString);
+                    }
+                }
+            }
+        }
+
+        private string OpeningSpaces(int ii, short sii)
+        {
+            string ret = "";
+            
+            for(; sii > 0; sii--)
+            {
+                ii = ii / 10;
+
+                if(ii == 0)
+                {
+                    ret = ret + "-";
+                }
+            }
+
+            return (" " + ret + ">");
+        }
+
+        private string MiddleSpaces(byte write)
+        {
+            if(write < 10)
+            {
+                return " | " + write + "| ";
+            }
+            else
+            {
+                return " |" + write + "| ";
+            }
+        }
+
+        public byte[] buildRow(long y)
+        {
+            byte[] row = new byte[this.engineNumberOfVariables];
+
+            int endianII = 0, placeII = this.engineNumberOfVariables;
 
             while (placeII > 0)
             {
-                row[placeII - 1] = determineWriteValue(endianII, y, numberOfValues, numberOfVariables);
+                row[placeII - 1] = determineWriteValue(endianII, y, this.engineNumberOfValues, this.engineNumberOfVariables);
 
                 endianII++;
                 placeII--;
@@ -74,7 +125,7 @@ namespace Bad_Idea_Counting
             return (byte)(y - A);
         }
 
-        private byte determineWriteValue(int x, long y, int v, int n)
+        private byte determineWriteValue(in int x, in long y, in int v, in int n)
         {
             if (x == 0)
             {

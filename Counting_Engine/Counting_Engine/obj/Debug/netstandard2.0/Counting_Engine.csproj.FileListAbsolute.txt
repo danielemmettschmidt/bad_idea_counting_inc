@@ -1,0 +1,9 @@
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\bin\Debug\netstandard2.0\Counting_Engine.deps.json
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\bin\Debug\netstandard2.0\Counting_Engine.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\bin\Debug\netstandard2.0\Counting_Engine.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\obj\Debug\netstandard2.0\Counting_Engine.csprojAssemblyReference.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\obj\Debug\netstandard2.0\Counting_Engine.csproj.CoreCompileInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\obj\Debug\netstandard2.0\Counting_Engine.AssemblyInfoInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\obj\Debug\netstandard2.0\Counting_Engine.AssemblyInfo.cs
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\obj\Debug\netstandard2.0\Counting_Engine.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Counting_Engine\obj\Debug\netstandard2.0\Counting_Engine.pdb

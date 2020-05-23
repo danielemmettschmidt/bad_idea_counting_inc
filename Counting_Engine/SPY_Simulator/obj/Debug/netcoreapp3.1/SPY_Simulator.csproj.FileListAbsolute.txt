@@ -1,0 +1,16 @@
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Simulator.exe
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Simulator.deps.json
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Simulator.runtimeconfig.json
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Simulator.runtimeconfig.dev.json
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Simulator.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Simulator.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\Counting_Engine.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\Counting_Engine.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.csprojAssemblyReference.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.csproj.CoreCompileInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.AssemblyInfoInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.AssemblyInfo.cs
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.csproj.CopyComplete
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.genruntimeconfig.cache
