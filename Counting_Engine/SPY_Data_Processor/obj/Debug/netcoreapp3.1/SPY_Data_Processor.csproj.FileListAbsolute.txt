@@ -1,0 +1,16 @@
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.csprojAssemblyReference.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.csproj.CoreCompileInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.AssemblyInfoInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.AssemblyInfo.cs
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\SPY_Data_Processor.exe
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\SPY_Data_Processor.deps.json
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\SPY_Data_Processor.runtimeconfig.json
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\SPY_Data_Processor.runtimeconfig.dev.json
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\SPY_Data_Processor.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\SPY_Data_Processor.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\DirectoryValidator.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\DirectoryValidator.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.csproj.CopyComplete
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.genruntimeconfig.cache

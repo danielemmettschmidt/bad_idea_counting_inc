@@ -16,19 +16,19 @@ namespace SPY_Data_Processor
             {
                 try
                 {
-                    int write = Int32.Parse(row.Split(',')[CloseColumnNumber]);
+                    long write = Int32.Parse(GrabCloseNoDecimal(row.Split(',')[CloseColumnNumber]));
 
                     this.Trading_Days.Add(new SPY_Trading_Day(write));
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception("On row '" + row + "' received exception -> " + ex.Message);
+                    throw new Exception("On writing '" + row + "' received exception -> " + ex.Message);
                 }
             }
 
             long Current_Max = 0, Current_Min = 0;
 
-            int Days_Left_On_Max = 0, Days_Left_On_Min = 0, ii = 0;
+            int Days_Left_On_Max = 260, Days_Left_On_Min = 0, ii = 0;
 
             List<long> Fifty_Two_Week_Closes = new List<long>();
 
@@ -38,7 +38,7 @@ namespace SPY_Data_Processor
                 {
                     if (ii == 0)
                     {
-                        Current_Max = Day.Close;
+                        Current_Max = Day.Close + 1;
                         Current_Min = Day.Close;
                     }
 
@@ -72,12 +72,45 @@ namespace SPY_Data_Processor
                     Current_Min = SearchForNewMin(Fifty_Two_Week_Closes, out Days_Left_On_Min);
                 }
 
-                this.Trading_Days[ii].SetRange(Current_Max, Current_Min);
+                this.Trading_Days[ii].SetRange(Current_Max, Current_Min, RangeDenominator);
 
                 Days_Left_On_Max--;
                 Days_Left_On_Min--;
                 ii++;
             }
+        }
+
+        private string GrabCloseNoDecimal(string input)
+        {
+            string ret = "";
+
+            int ii = 0;
+
+            bool foundDecimal = false;
+
+            foreach(char c in input)
+            {
+                if(("" + c) == ".")
+                {
+                    foundDecimal = true;
+                }
+                else
+                {
+                    ret = ret + c;
+                }
+
+                if (ii == 4)
+                {
+                    return ret;
+                }
+
+                if(foundDecimal == true)
+                {
+                    ii++;
+                }
+            }
+
+            return ret;
         }
 
         private long SearchForNewMax(List<long> History, out int Days_Left_On_Max)

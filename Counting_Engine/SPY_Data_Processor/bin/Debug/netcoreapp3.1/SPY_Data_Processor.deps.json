@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "SPY_Data_Processor/1.0.0": {
+        "dependencies": {
+          "DirectoryValidator": "1.0.0"
+        },
+        "runtime": {
+          "SPY_Data_Processor.dll": {}
+        }
+      },
+      "DirectoryValidator/1.0.0": {
+        "runtime": {
+          "DirectoryValidator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SPY_Data_Processor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DirectoryValidator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
