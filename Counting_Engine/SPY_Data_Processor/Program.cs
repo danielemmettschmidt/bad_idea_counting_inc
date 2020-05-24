@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Security.Permissions;
 using System.IO;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace SPY_Data_Processor
 {
@@ -51,6 +52,9 @@ namespace SPY_Data_Processor
             }
 
             SPY_History SPY = new SPY_History(FileRows, CloseColNum, RangeDenominator);
+
+            File.WriteAllText(( dir + "\\" + DateTime.UtcNow.ToString("MM_dd_yyyy_HH_mm_ss") + "_SPY.json" ), JsonConvert.SerializeObject(SPY));
+
         }
 
         static byte grabIndex(string titleline, string search)

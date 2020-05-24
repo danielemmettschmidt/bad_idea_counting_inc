@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eWBgJwyIM46c2TbS8P+G6ONFsmT5kAIy/YYLrjc6n22Lk36h0zt7uwBuQ7MFHZYBg/xv4L61o6eOijIbwR+Adw==",
+  "dgSpecHash": "z+fET4+aOtJG5DFgHJg3/EDmVCqMVtGbUXHrpIdufacmlMyw1F7+adqwkhpExpamBrZMz8ufXIq0JpOTbr0K9w==",
   "success": true,
   "projectFilePath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\SPY_Data_Processor.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Daniel\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
