@@ -14,3 +14,9 @@ C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netc
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.pdb
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\obj\Debug\netcoreapp3.1\SPY_Simulator.genruntimeconfig.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Data_Processor.exe
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\DirectoryValidator.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Data_Processor.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Data_Processor.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\DirectoryValidator.pdb

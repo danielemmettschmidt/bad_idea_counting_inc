@@ -19,6 +19,11 @@ namespace Bad_Idea_Counting
 
         List<byte[]> chartRows;
 
+        public Counting_Engine(int NumberOfValues, int NumberOfVariables)
+        {
+            initialize(NumberOfValues, NumberOfVariables, false, false);
+        }
+
         public Counting_Engine(int NumberOfValues, int NumberOfVariables, bool construct)
         {
             initialize(NumberOfValues, NumberOfVariables, construct, false);

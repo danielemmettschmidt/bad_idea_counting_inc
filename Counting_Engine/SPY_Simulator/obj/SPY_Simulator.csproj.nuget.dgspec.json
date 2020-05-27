@@ -63,6 +63,128 @@
         }
       }
     },
+    "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\DirectoryValidator\\DirectoryValidator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\DirectoryValidator\\DirectoryValidator.csproj",
+        "projectName": "DirectoryValidator",
+        "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\DirectoryValidator\\DirectoryValidator.csproj",
+        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\DirectoryValidator\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\SPY_Data_Processor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\SPY_Data_Processor.csproj",
+        "projectName": "SPY_Data_Processor",
+        "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\SPY_Data_Processor.csproj",
+        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+        "outputPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\DirectoryValidator\\DirectoryValidator.csproj": {
+                "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\DirectoryValidator\\DirectoryValidator.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Simulator\\SPY_Simulator.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -92,6 +214,9 @@
             "projectReferences": {
               "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Counting_Engine\\Counting_Engine.csproj": {
                 "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Counting_Engine\\Counting_Engine.csproj"
+              },
+              "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\SPY_Data_Processor.csproj": {
+                "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\SPY_Data_Processor.csproj"
               }
             }
           }

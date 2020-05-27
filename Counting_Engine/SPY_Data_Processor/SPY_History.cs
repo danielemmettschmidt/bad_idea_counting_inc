@@ -1,12 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace SPY_Data_Processor
 {
     public class SPY_History
     {
         public List<SPY_Trading_Day> Trading_Days;
+
+        public SPY_History()
+        {
+
+        }
+
+        public SPY_History(List<SPY_Trading_Day> Trading_Days_Input)
+        {
+            this.Trading_Days = Trading_Days_Input;
+        }
 
         public SPY_History(List<string> FileRows, byte CloseColumnNumber, byte RangeDenominator)
         {
@@ -155,6 +168,18 @@ namespace SPY_Data_Processor
             }
 
             return NewMin;
+        }
+
+        public static SPY_History DeserializeFromJSONFile(string file)
+        {
+            string jsonString = File.ReadAllText(file);
+
+            JsonTextReader reader = new JsonTextReader(new StringReader(jsonString));
+
+            JsonSerializer wtf = new JsonSerializer();
+
+            return wtf.Deserialize<SPY_History>(reader);
+
         }
 
         ~SPY_History()

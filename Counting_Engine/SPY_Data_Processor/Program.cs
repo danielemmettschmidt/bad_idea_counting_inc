@@ -7,9 +7,10 @@ using Newtonsoft.Json;
 
 namespace SPY_Data_Processor
 {
-    class Program
+
+    public class DirectoryFinder
     {
-        static void Main(string[] args)
+        public static string GrabDir(string[] args)
         {
             ///////// ADD DENOMINATOR PROCESSOR
             ///
@@ -20,13 +21,23 @@ namespace SPY_Data_Processor
 
             if (DirectoryValidator.DirectoryValidator.ProcessDirectoryArguments(args, ref dir) == DirectoryValidator.DirectoryValidationStatus.ValidDirectorySupplied)
             {
-                dir = args[0];
+                return args[0];
             }
 
             if (DirectoryValidator.DirectoryValidator.ProcessDirectoryArguments(args, ref dir) != DirectoryValidator.DirectoryValidationStatus.Failed)
             {
-                Process(dir, 8);  ///////////// LET'S NOT HARDCODE THIS
+                return dir;
             }
+
+            throw new Exception(args[0] + "failed to validate.");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Process(DirectoryFinder.GrabDir(args), 8);  ///////////// LET'S NOT HARDCODE THIS
         }
 
         static void Process(string dir, byte RangeDenominator)
