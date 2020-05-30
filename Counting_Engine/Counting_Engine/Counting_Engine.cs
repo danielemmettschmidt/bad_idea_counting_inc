@@ -176,7 +176,7 @@ namespace Bad_Idea_Counting
 
         }
 
-        private static long ToPower(int num, int power)
+        public static long ToPower(int num, int power)
         {
             if (power == 0)
             {

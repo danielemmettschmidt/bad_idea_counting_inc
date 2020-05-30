@@ -9,7 +9,8 @@
       "SPY_Simulator/1.0.0": {
         "dependencies": {
           "Counting_Engine": "1.0.0",
-          "SPY_Data_Processor": "1.0.0"
+          "SPY_Data_Processor": "1.0.0",
+          "Simulation": "1.0.0"
         },
         "runtime": {
           "SPY_Simulator.dll": {}
@@ -31,6 +32,14 @@
       "DirectoryValidator/1.0.0": {
         "runtime": {
           "DirectoryValidator.dll": {}
+        }
+      },
+      "Simulation/1.0.0": {
+        "dependencies": {
+          "Counting_Engine": "1.0.0"
+        },
+        "runtime": {
+          "Simulation.dll": {}
         }
       },
       "SPY_Data_Processor/1.0.0": {
@@ -63,6 +72,11 @@
       "sha512": ""
     },
     "DirectoryValidator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Simulation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

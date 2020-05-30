@@ -1,0 +1,12 @@
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\bin\Debug\netstandard2.0\Simulation.deps.json
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\bin\Debug\netstandard2.0\Simulation.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\bin\Debug\netstandard2.0\Simulation.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\bin\Debug\netstandard2.0\Counting_Engine.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\bin\Debug\netstandard2.0\Counting_Engine.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\obj\Debug\netstandard2.0\Simulation.csprojAssemblyReference.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\obj\Debug\netstandard2.0\Simulation.csproj.CoreCompileInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\obj\Debug\netstandard2.0\Simulation.AssemblyInfoInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\obj\Debug\netstandard2.0\Simulation.AssemblyInfo.cs
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\obj\Debug\netstandard2.0\Simulation.csproj.CopyComplete
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\obj\Debug\netstandard2.0\Simulation.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Simulations\obj\Debug\netstandard2.0\Simulation.pdb

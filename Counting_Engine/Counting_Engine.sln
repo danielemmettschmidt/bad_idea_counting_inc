@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Counting_Engine", "Counting_Engine\Counting_Engine.csproj", "{B94EA312-72C1-4914-AA8C-D27F33428A0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Counting_Engine", "Counting_Engine\Counting_Engine.csproj", "{B94EA312-72C1-4914-AA8C-D27F33428A0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPY_Simulator", "SPY_Simulator\SPY_Simulator.csproj", "{78E51816-88E7-4671-A9FA-DCD2E548D253}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPY_Simulator", "SPY_Simulator\SPY_Simulator.csproj", "{78E51816-88E7-4671-A9FA-DCD2E548D253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPY_Data_Processor", "SPY_Data_Processor\SPY_Data_Processor.csproj", "{AF03BF34-9A1C-47EC-AA3A-3C59CFCAB711}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPY_Data_Processor", "SPY_Data_Processor\SPY_Data_Processor.csproj", "{AF03BF34-9A1C-47EC-AA3A-3C59CFCAB711}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryValidator", "DirectoryValidator\DirectoryValidator.csproj", "{947CCA64-DE7D-4177-9783-D40CF8B35456}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryValidator", "DirectoryValidator\DirectoryValidator.csproj", "{947CCA64-DE7D-4177-9783-D40CF8B35456}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulation", "Simulations\Simulation.csproj", "{91A2FF83-73DE-4E76-B446-899F9EF848CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{947CCA64-DE7D-4177-9783-D40CF8B35456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{947CCA64-DE7D-4177-9783-D40CF8B35456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{947CCA64-DE7D-4177-9783-D40CF8B35456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A2FF83-73DE-4E76-B446-899F9EF848CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A2FF83-73DE-4E76-B446-899F9EF848CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A2FF83-73DE-4E76-B446-899F9EF848CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A2FF83-73DE-4E76-B446-899F9EF848CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -112,7 +112,7 @@ namespace SPY_Data_Processor
                     ret = ret + c;
                 }
 
-                if (ii == 4)
+                if (ii == 2)
                 {
                     return ret;
                 }
@@ -180,6 +180,30 @@ namespace SPY_Data_Processor
 
             return wtf.Deserialize<SPY_History>(reader);
 
+        }
+
+        public void Filter_Data(int StartAt)
+        {
+            this.Filter_Data(StartAt, (this.Trading_Days.Count - 1)); 
+        }
+
+        public void Filter_Data(int StartAt, int EndAt)
+        {
+            List<SPY_Trading_Day> Days = new List<SPY_Trading_Day>();
+
+            int ii = StartAt;
+
+            while(ii < this.Trading_Days.Count)
+            {
+                if(ii <= EndAt)
+                {
+                    Days.Add(this.Trading_Days[ii]);
+                }
+
+                ii++;
+            }
+
+            this.Trading_Days = Days;
         }
 
         ~SPY_History()

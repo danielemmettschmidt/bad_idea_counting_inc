@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2dgetsDIu6fDTZFhwG23Rsg/Bu8WneFDlVd1MHxyJ0OM1kNwpdiymVl2fnmyv8lhhWPvGJi96mgZNDQhDuR0QQ==",
+  "success": true,
+  "projectFilePath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Simulations\\Simulation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Daniel\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Daniel\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
