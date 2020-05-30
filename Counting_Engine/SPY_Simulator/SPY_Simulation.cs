@@ -69,6 +69,8 @@ namespace SPY_Simulator
                             return Run_Simulation(NumberOfValues, NumberOfVariables, (ii + 1), NumberOfTasks);
                         })
                     );
+
+                Thread.Sleep(1000);
             }
 
             for (int ii = 0; ii < NumberOfTasks; ii++)
@@ -132,7 +134,7 @@ namespace SPY_Simulator
 
                 if(IsLogicalCandidate(candidate, NumberOfValues))
                 {
-                    result = CalculateResult(result, candidate, NumberOfValues, ii, TaskNumber);
+                    result = CalculateResult(result, candidate, NumberOfValues, ii, TaskNumber, countCap);
                 }                                
             }
 
@@ -178,7 +180,7 @@ namespace SPY_Simulator
             return false;
         }
 
-        private SPY_Simulation_Result CalculateResult(SPY_Simulation_Result CurrentResult, byte[] Candidate, int NumberOfValues, long ii, int TaskNumber)
+        private SPY_Simulation_Result CalculateResult(SPY_Simulation_Result CurrentResult, byte[] Candidate, int NumberOfValues, long ii, int TaskNumber, long CompletionDenom)
         {
             long profit = 0, surgePot = 0;
 
@@ -195,10 +197,83 @@ namespace SPY_Simulator
                 CurrentResult.IteratorIndex = ii;
                 CurrentResult.Result = Candidate;
 
-                Console.WriteLine("Task Number " + TaskNumber + " has found a new max profit: " + profit);
+                CurrentResult.Report = (DateTime.Now.ToString() + ": Task Number " + TaskNumber + " is " + ShowNumber( BuildCompletion( (int)(ii * 100000 / CompletionDenom) ) , 4) + "% complete, it has found a new max profit: $" + ShowNumber(profit, 2));
+
+                Console.WriteLine(CurrentResult.Report);
             }
 
             return CurrentResult;
+        }
+
+        private string BuildCompletion(int input)
+        {
+            string build = ("" + input);
+
+            while(build.Length < 5)
+            {
+                build = "0" + build;
+            }
+
+            return build;
+        }
+
+        private string ShowNumber(string Input, int Decimal)
+        {
+            char[] reverse = ReverseString(Input);
+
+            int ii = 0;
+
+            string build = "";
+
+            foreach (char c in reverse)
+            {
+                if (ii == Decimal)
+                {
+                    build = build + ".";
+                }
+
+                if (ii > Decimal && (ii - Decimal) % 3 == 0)
+                {
+                    build = build + ",";
+                }
+
+                build = build + c;
+
+                ii++;
+            }
+
+            reverse = ReverseString(build);
+
+            build = "";
+
+            foreach (char c in reverse)
+            {
+                build = build + c;
+            }
+
+            return build;
+        }
+
+        private string ShowNumber(long Input, int Decimal)
+        {
+            string read = ("" + Input);
+
+            return ShowNumber(read, Decimal);
+        }
+
+        private char[] ReverseString(char[] input)
+        {
+            Array.Reverse(input);
+
+            return input;
+        }
+
+        private char[] ReverseString(string input)
+        {
+            char[] reverse = input.ToCharArray();
+
+            return ReverseString(reverse);
+
         }
 
         private long CalculateProfit(long close, ref long SurgePot, byte Nominator, int NumberOfValues)
@@ -306,6 +381,7 @@ namespace SPY_Simulator
         public long Profit;
         public long IteratorIndex;
         public byte[] Result;
+        public string Report;
 
         public SPY_Simulation_Result(int TaskNumber)
         {

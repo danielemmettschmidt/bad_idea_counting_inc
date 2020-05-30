@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace SPY_Data_Processor
 {
     public class SPY_Trading_Day
