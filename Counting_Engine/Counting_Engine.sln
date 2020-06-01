@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPY_Data_Processor", "SPY_D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryValidator", "DirectoryValidator\DirectoryValidator.csproj", "{947CCA64-DE7D-4177-9783-D40CF8B35456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulation", "Simulations\Simulation.csproj", "{91A2FF83-73DE-4E76-B446-899F9EF848CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simulation", "Simulations\Simulation.csproj", "{91A2FF83-73DE-4E76-B446-899F9EF848CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{CA1243BA-B02F-4B1D-B2EC-E8CB86836651}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{91A2FF83-73DE-4E76-B446-899F9EF848CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91A2FF83-73DE-4E76-B446-899F9EF848CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91A2FF83-73DE-4E76-B446-899F9EF848CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1243BA-B02F-4B1D-B2EC-E8CB86836651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1243BA-B02F-4B1D-B2EC-E8CB86836651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1243BA-B02F-4B1D-B2EC-E8CB86836651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1243BA-B02F-4B1D-B2EC-E8CB86836651}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

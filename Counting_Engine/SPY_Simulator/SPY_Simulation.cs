@@ -16,7 +16,7 @@ namespace SPY_Simulator
         In_Flow
     }
 
-    class SPY_Simulation
+    public class SPY_Simulation
     {
         private SPY_History SPY;
 

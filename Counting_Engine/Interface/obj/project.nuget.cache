@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FpJDk0JSGIzDKbpzQLP7WS2AGXEXmf67/m2MFJH6JLU0efgfUpp6hybXpHxSIEpapRlA8qYwPW7SVeMDg2ThLw==",
+  "success": true,
+  "projectFilePath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Interface\\Interface.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Daniel\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,208 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Counting_Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Counting_Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Counting_Engine.dll": {}
+        }
+      },
+      "DirectoryValidator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/DirectoryValidator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DirectoryValidator.dll": {}
+        }
+      },
+      "Simulation/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Counting_Engine": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Simulation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Simulation.dll": {}
+        }
+      },
+      "SPY_Data_Processor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "DirectoryValidator": "1.0.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "bin/placeholder/SPY_Data_Processor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SPY_Data_Processor.dll": {}
+        }
+      },
+      "SPY_Simulator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Counting_Engine": "1.0.0",
+          "SPY_Data_Processor": "1.0.0",
+          "Simulation": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SPY_Simulator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SPY_Simulator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Counting_Engine/1.0.0": {
+      "type": "project",
+      "path": "../Counting_Engine/Counting_Engine.csproj",
+      "msbuildProject": "../Counting_Engine/Counting_Engine.csproj"
+    },
+    "DirectoryValidator/1.0.0": {
+      "type": "project",
+      "path": "../DirectoryValidator/DirectoryValidator.csproj",
+      "msbuildProject": "../DirectoryValidator/DirectoryValidator.csproj"
+    },
+    "Simulation/1.0.0": {
+      "type": "project",
+      "path": "../Simulations/Simulation.csproj",
+      "msbuildProject": "../Simulations/Simulation.csproj"
+    },
+    "SPY_Data_Processor/1.0.0": {
+      "type": "project",
+      "path": "../SPY_Data_Processor/SPY_Data_Processor.csproj",
+      "msbuildProject": "../SPY_Data_Processor/SPY_Data_Processor.csproj"
+    },
+    "SPY_Simulator/1.0.0": {
+      "type": "project",
+      "path": "../SPY_Simulator/SPY_Simulator.csproj",
+      "msbuildProject": "../SPY_Simulator/SPY_Simulator.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "SPY_Simulator >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Daniel\\.nuget\\packages\\": {},
+    "E:\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Interface\\Interface.csproj",
+      "projectName": "Interface",
+      "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Interface\\Interface.csproj",
+      "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
+      "outputPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Interface\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "E:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Simulator\\SPY_Simulator.csproj": {
+              "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Simulator\\SPY_Simulator.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
