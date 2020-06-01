@@ -20,5 +20,17 @@ namespace Interface
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.button2.Visible = true;
+            this.button1.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            this.button2.Visible = false;
+            this.button1.Visible = true;
+        }
     }
 }

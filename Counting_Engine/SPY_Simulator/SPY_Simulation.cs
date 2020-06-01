@@ -375,7 +375,7 @@ namespace SPY_Simulator
 
 
 
-    class SPY_Simulation_Result
+    public class SPY_Simulation_Result
     {
         public int TaskNumber;
         public long Profit;
