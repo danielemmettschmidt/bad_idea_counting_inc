@@ -9,13 +9,11 @@ C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcorea
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\Counting_Engine.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\DirectoryValidator.dll
-C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\Simulation.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\SPY_Data_Processor.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\SPY_Simulator.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\SPY_Simulator.pdb
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\Counting_Engine.pdb
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\DirectoryValidator.pdb
-C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\Simulation.pdb
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\bin\Debug\netcoreapp3.1\SPY_Data_Processor.pdb
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\obj\Debug\netcoreapp3.1\Interface.csprojAssemblyReference.cache
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\Interface\obj\Debug\netcoreapp3.1\Interface.Form1.resources

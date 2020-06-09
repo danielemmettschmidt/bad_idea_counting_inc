@@ -11,6 +11,16 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Counting_Engine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Counting_Engine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Counting_Engine.dll": {}
+        }
+      },
       "DirectoryValidator/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -55,6 +65,11 @@
         "packageIcon.png"
       ]
     },
+    "Counting_Engine/1.0.0": {
+      "type": "project",
+      "path": "../Counting_Engine/Counting_Engine.csproj",
+      "msbuildProject": "../Counting_Engine/Counting_Engine.csproj"
+    },
     "DirectoryValidator/1.0.0": {
       "type": "project",
       "path": "../DirectoryValidator/DirectoryValidator.csproj",
@@ -63,6 +78,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Counting_Engine >= 1.0.0",
       "DirectoryValidator >= 1.0.0",
       "Newtonsoft.Json >= 12.0.3"
     ]
@@ -98,6 +114,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Counting_Engine\\Counting_Engine.csproj": {
+              "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Counting_Engine\\Counting_Engine.csproj"
+            },
             "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\DirectoryValidator\\DirectoryValidator.csproj": {
               "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\DirectoryValidator\\DirectoryValidator.csproj"
             }

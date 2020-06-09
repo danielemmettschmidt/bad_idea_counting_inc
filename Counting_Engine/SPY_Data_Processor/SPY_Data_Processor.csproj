@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Counting_Engine\Counting_Engine.csproj" />
     <ProjectReference Include="..\DirectoryValidator\DirectoryValidator.csproj" />
   </ItemGroup>
 

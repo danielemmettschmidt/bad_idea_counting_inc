@@ -20,5 +20,3 @@ C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netc
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Data_Processor.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\SPY_Data_Processor.pdb
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\DirectoryValidator.pdb
-C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\Simulation.dll
-C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Simulator\bin\Debug\netcoreapp3.1\Simulation.pdb

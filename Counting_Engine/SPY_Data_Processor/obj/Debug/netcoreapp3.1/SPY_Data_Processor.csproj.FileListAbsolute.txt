@@ -76,3 +76,5 @@ C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\System.EnterpriseServices.Wrapper.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\obj\Debug\netcoreapp3.1\SPY_Data_Processor.csproj.CoreCompileInputs.cache
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\Counting_Engine.dll
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\SPY_Data_Processor\bin\Debug\netcoreapp3.1\Counting_Engine.pdb

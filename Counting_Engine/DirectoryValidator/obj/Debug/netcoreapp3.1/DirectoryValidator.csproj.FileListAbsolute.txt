@@ -1,9 +1,9 @@
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\bin\Debug\netcoreapp3.1\DirectoryValidator.deps.json
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\bin\Debug\netcoreapp3.1\DirectoryValidator.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\bin\Debug\netcoreapp3.1\DirectoryValidator.pdb
-C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\obj\Debug\netcoreapp3.1\DirectoryValidator.csprojAssemblyReference.cache
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\obj\Debug\netcoreapp3.1\DirectoryValidator.csproj.CoreCompileInputs.cache
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\obj\Debug\netcoreapp3.1\DirectoryValidator.AssemblyInfoInputs.cache
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\obj\Debug\netcoreapp3.1\DirectoryValidator.AssemblyInfo.cs
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\obj\Debug\netcoreapp3.1\DirectoryValidator.dll
 C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\obj\Debug\netcoreapp3.1\DirectoryValidator.pdb
+C:\Dev\GitHub\bad_idea_counting_inc\Counting_Engine\DirectoryValidator\obj\Debug\netcoreapp3.1\DirectoryValidator.csprojAssemblyReference.cache

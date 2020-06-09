@@ -1,32 +1,50 @@
 ﻿using Bad_Idea_Counting;
 using SPY_Data_Processor;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Runtime.CompilerServices;
 
 namespace SPY_Simulator
 {
-    enum Pot_Status_Is
-    {
-        Full,
-        Empty,
-        In_Flow
-    }
-
     public class SPY_Simulation
     {
+        private bool run;
+        
+        public bool done;
+
         private SPY_History SPY;
 
         private Counting_Engine CE;
 
-        private int startRange, incrementer;
+        private int startRange, incrementer, numberofvalues, numberofvariables, numberoftasks;
 
-        private long dailyBuy, dailyBuyPrecision, sale, potCap;
-
+        private long dailyBuy, dailyBuyPrecision, sale, potCap, countCap, progress;
+        
         public List<SPY_Simulation_Result> Results;
+
+        public SPY_Simulation()
+        {
+
+        }
+
+        public static SPY_Simulation DeserializeFromJSONFile(string file)
+        {
+            string jsonString = File.ReadAllText(file);
+
+            JsonTextReader reader = new JsonTextReader(new StringReader(jsonString));
+
+            JsonSerializer wtf = new JsonSerializer();
+
+            return wtf.Deserialize<SPY_Simulation>(reader);
+
+        }
 
         public SPY_Simulation(int NumberOfValues, int NumberOfVariables, int NumberOfTasks, int StartRangeAt, long DailyBuy, SPY_History SPYHistory)
         {
@@ -35,13 +53,19 @@ namespace SPY_Simulator
             this.CE = new Counting_Engine(NumberOfValues, NumberOfVariables);
 
             SPYHistory.Filter_Data(SPYHistory.Trading_Days.Count - YearsToTradingDays(43));  // SIMULATION CURRENTLY TRIMS THE DATA DOWN THE LAST 43 YEARS 
-                                                             // -> SOMEONE WHO STARTED INVESTING AT 22 AND IS RETIRING AT 65
+                                                                                             // -> SOMEONE WHO STARTED INVESTING AT 22 AND IS RETIRING AT 65
 
             this.SPY = SPYHistory;
 
+            this.numberoftasks = NumberOfTasks;
+
+            this.numberofvalues = NumberOfValues;
+
+            this.numberofvariables = NumberOfVariables;
+
             this.startRange = StartRangeAt;
 
-            this.CalculateIncrementer(NumberOfValues, StartRangeAt);
+            this.CalculateIncrementer();
 
             this.dailyBuy = DailyBuy * 100;
 
@@ -51,165 +75,143 @@ namespace SPY_Simulator
 
             this.potCap = (this.dailyBuy * (YearsToTradingDays(1) / 4));  // POT CAP IS SET TO ONE FISCAL QUARTER'S WORTH OF BUYS
 
-            // BEGIN RUNNING SIMULATION TASKS
-
-            List<Task<SPY_Simulation_Result>> Ts = new List<Task<SPY_Simulation_Result>>();
+            this.countCap = Counting_Engine.ToPower(this.numberofvalues, this.numberofvariables);
 
             this.Results = new List<SPY_Simulation_Result>();
 
-            for (int ii = 0; ii < NumberOfTasks; ii++)
+            this.progress = 0;
+        }
+
+        public void Run()
+        {
+            this.run = true;
+
+            this.done = false;
+
+            Thread sim = new Thread(this.RunTasks);
+
+            sim.Start();
+        }
+
+        public void Stop()
+        {
+            this.run = false;
+        }
+
+        public void RunTasks()
+        {
+            List<Task<SPY_Simulation_Result>> Ts = new List<Task<SPY_Simulation_Result>>();
+
+            // BEGIN RUNNING SIMULATION TASKS
+
+            for (int ii = 0; ii < this.numberoftasks; ii++)
             {
                 Ts.Add
                     (
-                        Task<SPY_Simulation_Result>.Run( () =>
+                        Task<SPY_Simulation_Result>.Run(() =>
                         {
                             var threadId = Thread.CurrentThread.ManagedThreadId;
                             int taskId = ii;
 
-                            return Run_Simulation(NumberOfValues, NumberOfVariables, (ii + 1), NumberOfTasks);
+                            return Run_Simulation(ii + 1);
                         })
                     );
 
                 Thread.Sleep(1000);
             }
 
-            for (int ii = 0; ii < NumberOfTasks; ii++)
+            for (int ii = 0; ii < this.numberoftasks; ii++)
             {
                 Ts[ii].Wait();
                 this.Results.Add(Ts[ii].Result);
             }
 
-            this.SortResults();            
+            if (this.Results.Count != 0)
+            {
+                this.SortResults();
+            }
+
+            this.done = true;
         }
 
         private void SortResults()
         {
-            List<SPY_Simulation_Result> sortingResults = this.Results, intermediateResults = new List<SPY_Simulation_Result>();
+            List<SPY_Simulation_Result> sortingResults = this.Results;
 
             int count = this.Results.Count;
 
             this.Results = new List<SPY_Simulation_Result>();
 
-            while(this.Results.Count != count)
+            long max = -1;
+            
+            int ii;
+
+            while (this.Results.Count < this.numberoftasks)
             {
-                long max = 0;
-                int target = 0;
+                this.Results.Add(GrabMaxResult(ref sortingResults, ref max, out ii));
 
-                foreach (SPY_Simulation_Result result in sortingResults)
-                {
-                    if(result.Profit > max)
-                    {
-                        max = result.Profit;
-                        target = result.TaskNumber;
-                    }
-                }
-
-                foreach (SPY_Simulation_Result result in sortingResults)
-                {
-                    if(result.TaskNumber == target)
-                    {
-                        this.Results.Add(result);
-                    }
-                    else
-                    {
-                        intermediateResults.Add(result);
-                    }
-                }
-
-                sortingResults = intermediateResults;
+                sortingResults.RemoveAt(ii);
             }
         }
 
-
-
-        private SPY_Simulation_Result Run_Simulation(int NumberOfValues, int NumberOfVariables, int TaskNumber, int NumberOfTasks)
+        private SPY_Simulation_Result GrabMaxResult(ref List<SPY_Simulation_Result> SortingResults, ref long max, out int tii)
         {
-            long countCap = Counting_Engine.ToPower(NumberOfValues, NumberOfVariables);
+            tii = 0;
+            
+            int ii = 0;
 
-            SPY_Simulation_Result result = new SPY_Simulation_Result(TaskNumber);
+            SPY_Simulation_Result ret = new SPY_Simulation_Result(-1);
 
-            for (long ii = TaskNumber; ii < countCap; ii = ii + NumberOfTasks)
+            foreach (SPY_Simulation_Result result in SortingResults)
             {
-                byte[] candidate = this.CE.buildRow(ii);
-
-                if(IsLogicalCandidate(candidate, NumberOfValues))
+                if (result.Profit > max)
                 {
-                    result = CalculateResult(result, candidate, NumberOfValues, ii, TaskNumber, countCap);
-                }                                
-            }
-
-            return result;
-        }
-
-        private bool IsLogicalCandidate(byte[] Candidate, int NumberOfValues)
-        {
-            int ignore = -1, ii = 0, halfway = ((Candidate.Length) / 2);
-
-            int half = (NumberOfValues / 2);
-
-            bool foundGrower = false;
-
-            if (Candidate.Length % 2 != 0)
-            {
-                ignore = halfway;
-            }
-
-            foreach (byte nominator in Candidate)
-            {
-                if (ii <= halfway)
-                {
-                    if (nominator > half)
-                    {
-                        foundGrower = true;
-                    }
-                }
-                else
-                {
-                    if (ii != ignore)
-                    {
-                        if (nominator <= half && foundGrower == true)
-                        {
-                            return true;
-                        }
-                    }
+                    max = result.Profit;
+                    tii = ii;
+                    ret = result;
                 }
 
                 ii++;
             }
 
-            return false;
+            return ret;
         }
 
-        private SPY_Simulation_Result CalculateResult(SPY_Simulation_Result CurrentResult, byte[] Candidate, int NumberOfValues, long ii, int TaskNumber, long CompletionDenom)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // EVENTS
+
+        public delegate void ProgressReportedEventHandler(SimulationReport report, EventArgs args);
+
+        public event ProgressReportedEventHandler ProgressReported;
+        protected virtual void ProgressReport(SimulationReport SR)
         {
-            long profit = 0, surgePot = 0;
-
-            foreach (SPY_Trading_Day day in this.SPY.Trading_Days)
-            {
-                byte nominator = (byte)(Candidate[(day.Fifty_Two_Week_Range - 1)]);
-
-                profit = profit + CalculateProfit(day.Close, ref surgePot, nominator, NumberOfValues);
-            }
-
-            if (profit > CurrentResult.Profit)
-            {
-                CurrentResult.Profit = profit;
-                CurrentResult.IteratorIndex = ii;
-                CurrentResult.Result = Candidate;
-
-                CurrentResult.Report = (DateTime.Now.ToString() + ": Task Number " + TaskNumber + " is " + ShowNumber( BuildCompletion( (int)(ii * 100000 / CompletionDenom) ) , 4) + "% complete, it has found a new max profit: $" + ShowNumber(profit, 2));
-
-                Console.WriteLine(CurrentResult.Report);
-            }
-
-            return CurrentResult;
+            ProgressReported(SR, EventArgs.Empty);
         }
+
+
+
+
+
+
+
+
+
+
+        // STRING REPORTING METHODS
 
         private string BuildCompletion(int input)
         {
             string build = ("" + input);
 
-            while(build.Length < 5)
+            while (build.Length < 5)
             {
                 build = "0" + build;
             }
@@ -276,13 +278,128 @@ namespace SPY_Simulator
 
         }
 
-        private long CalculateProfit(long close, ref long SurgePot, byte Nominator, int NumberOfValues)
+
+
+
+
+
+
+
+
+
+        // SIMULATION METHODS
+
+        private SPY_Simulation_Result Run_Simulation(int TaskNumber)
+        {                              
+            SPY_Simulation_Result result = new SPY_Simulation_Result(TaskNumber);
+
+            long ii = progress + TaskNumber, tempCap = progress + TaskNumber;
+
+            while (ii < this.countCap)
+            {
+                tempCap = tempCap + 1000;
+
+                for (; ii < tempCap; ii = ii + this.numberoftasks)
+                {
+                    byte[] candidate = this.CE.buildRow(ii);
+
+                    if (IsLogicalCandidate(candidate))
+                    {
+                        result = CalculateResult(result, candidate, ii, TaskNumber, tempCap);
+                    }
+
+                    if (this.progress < ii)
+                    {
+                        this.progress = ii;
+                    }
+
+                    if (this.run == false)
+                    {
+                        return result;
+                    }
+                }
+
+                ProgressReport(new SimulationReport(ii, "Simulation has run " + ii + " times.", true));
+            }
+
+            
+
+            return result;
+        }
+
+        private bool IsLogicalCandidate(byte[] Candidate)
+        {
+            int ignore = -1, ii = 0, halfway = ((Candidate.Length) / 2);
+
+            int half = (this.numberofvalues / 2);
+
+            bool foundGrower = false;
+
+            if (Candidate.Length % 2 != 0)
+            {
+                ignore = halfway;
+            }
+
+            foreach (byte nominator in Candidate)
+            {
+                if (ii <= halfway)
+                {
+                    if (nominator > half)
+                    {
+                        foundGrower = true;
+                    }
+                }
+                else
+                {
+                    if (ii != ignore)
+                    {
+                        if (nominator <= half && foundGrower == true)
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+                ii++;
+            }
+
+            return false;
+        }
+
+        private SPY_Simulation_Result CalculateResult(SPY_Simulation_Result CurrentResult, byte[] Candidate, long ii, int TaskNumber, long CompletionDenom)
+        {
+            long profit = 0, surgePot = 0;
+
+            foreach (SPY_Trading_Day day in this.SPY.Trading_Days)
+            {
+                byte nominator = (byte)(Candidate[(day.Fifty_Two_Week_Range - 1)]);
+
+                profit = profit + CalculateProfit(day.Close, ref surgePot, nominator);
+            }
+
+            if (profit > CurrentResult.Profit)
+            {
+                CurrentResult.Profit = profit;
+                CurrentResult.IteratorIndex = ii;
+                CurrentResult.Result = Candidate;
+
+                CurrentResult.Report = (DateTime.Now.ToString() + ": Task Number " + TaskNumber + " is " + ShowNumber( BuildCompletion( (int)(ii * 100000 / CompletionDenom) ) , 4) + "% complete, it has found a new max profit: $" + ShowNumber(profit, 2));
+
+
+
+                Console.WriteLine(CurrentResult.Report);
+            }
+
+            return CurrentResult;
+        }        
+
+        private long CalculateProfit(long close, ref long SurgePot, byte Nominator)
         {
             int potFlow;
 
             Pot_Status_Is pot_status = CheckPot(SurgePot);
 
-            potFlow = CalculatePotFlow(Nominator, NumberOfValues);
+            potFlow = CalculatePotFlow(Nominator);
 
             long buy;
 
@@ -311,28 +428,28 @@ namespace SPY_Simulator
             return ( ( this.dailyBuyPrecision * percent ) / 10000 );
         }
 
-        private void CalculateIncrementer(int NumberOfValues, int BeginRange)
+        private void CalculateIncrementer()
         {
-            if (BeginRange < 0 || BeginRange >= 100)
+            if (this.startRange < 0 || this.startRange >= 100)
             {
-                throw new Exception(BeginRange + " was supplied for BeginRange argument for CalculateSurgeBuy... that number must be between 0 and 99");
+                throw new Exception(this.startRange + " was supplied for BeginRange argument for CalculateSurgeBuy... that number must be between 0 and 99");
             }
 
-            int ranges = NumberOfValues - 1;
+            int ranges = this.numberofvalues - 1;
 
-            if ((BeginRange * 10) % ((ranges * 10) / 2) != 0)
+            if ((this.startRange * 10) % ((ranges * 10) / 2) != 0)
             {
-                throw new Exception(NumberOfValues + " and " + BeginRange +
+                throw new Exception(this.numberofvalues + " and " + this.startRange +
                                     " were supplied for NumberOfValues and for BeginRange arguments for CalculateSurgeBuy... " +
                                     "Check your math. (BeginRange) must be wholly divisible by ((NumberOfValues -1) / 2)");
             }
 
-            this.incrementer = ((100 - BeginRange) / ranges) * 2;
+            this.incrementer = ((100 - this.startRange) / ranges) * 2;
         }
 
-        private int CalculatePotFlow(byte nominator, int NumberOfValues)
+        private int CalculatePotFlow(byte nominator)
         {
-            int intermediate = ( (nominator * 10) - ( ( NumberOfValues * 10 ) / 2) );
+            int intermediate = ( (nominator * 10) - ( (this.numberofvalues * 10 ) / 2) );
 
             if (intermediate < 5)
             {
@@ -372,29 +489,4 @@ namespace SPY_Simulator
             return (Years * 260);
         }
     }
-
-
-
-    public class SPY_Simulation_Result
-    {
-        public int TaskNumber;
-        public long Profit;
-        public long IteratorIndex;
-        public byte[] Result;
-        public string Report;
-
-        public SPY_Simulation_Result(int TaskNumber)
-        {
-            this.TaskNumber = TaskNumber;
-            this.Profit = 0;
-            this.IteratorIndex = 0;
-            this.Result = new byte[0];
-        }
-
-        ~SPY_Simulation_Result()
-        {
-
-        }
-    }
-
 }

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "SPY_Data_Processor/1.0.0": {
         "dependencies": {
+          "Counting_Engine": "1.0.0",
           "DirectoryValidator": "1.0.0",
           "Newtonsoft.Json": "12.0.3",
           "System.Web.Extensions": "4.0.0.0"
@@ -22,6 +23,11 @@
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.3.23909"
           }
+        }
+      },
+      "Counting_Engine/1.0.0": {
+        "runtime": {
+          "Counting_Engine.dll": {}
         }
       },
       "DirectoryValidator/1.0.0": {
@@ -283,6 +289,11 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Counting_Engine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DirectoryValidator/1.0.0": {
       "type": "project",

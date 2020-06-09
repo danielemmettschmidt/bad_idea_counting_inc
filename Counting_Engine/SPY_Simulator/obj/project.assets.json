@@ -31,23 +31,11 @@
           "bin/placeholder/DirectoryValidator.dll": {}
         }
       },
-      "Simulation/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Counting_Engine": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Simulation.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Simulation.dll": {}
-        }
-      },
       "SPY_Data_Processor/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Counting_Engine": "1.0.0",
           "DirectoryValidator": "1.0.0",
           "Newtonsoft.Json": "12.0.3"
         },
@@ -102,11 +90,6 @@
       "path": "../DirectoryValidator/DirectoryValidator.csproj",
       "msbuildProject": "../DirectoryValidator/DirectoryValidator.csproj"
     },
-    "Simulation/1.0.0": {
-      "type": "project",
-      "path": "../Simulations/Simulation.csproj",
-      "msbuildProject": "../Simulations/Simulation.csproj"
-    },
     "SPY_Data_Processor/1.0.0": {
       "type": "project",
       "path": "../SPY_Data_Processor/SPY_Data_Processor.csproj",
@@ -116,8 +99,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Counting_Engine >= 1.0.0",
-      "SPY_Data_Processor >= 1.0.0",
-      "Simulation >= 1.0.0"
+      "SPY_Data_Processor >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -153,9 +135,6 @@
           "projectReferences": {
             "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Counting_Engine\\Counting_Engine.csproj": {
               "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Counting_Engine\\Counting_Engine.csproj"
-            },
-            "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Simulations\\Simulation.csproj": {
-              "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\Simulations\\Simulation.csproj"
             },
             "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\SPY_Data_Processor.csproj": {
               "projectPath": "C:\\Dev\\GitHub\\bad_idea_counting_inc\\Counting_Engine\\SPY_Data_Processor\\SPY_Data_Processor.csproj"

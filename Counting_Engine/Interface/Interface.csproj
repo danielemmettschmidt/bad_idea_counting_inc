@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SPY_Data_Processor\SPY_Data_Processor.csproj" />
     <ProjectReference Include="..\SPY_Simulator\SPY_Simulator.csproj" />
   </ItemGroup>
 

@@ -9,6 +9,11 @@ namespace SPY_Data_Processor
 {
     public class SPY_History
     {
+        public static void SerializeClassToFile<T>(string Directory, T ob)
+        {
+            File.WriteAllText((Directory + "\\" + DateTime.UtcNow.ToString("MM_dd_yyyy_HH_mm_ss") + "_SPY_sim.progress"), JsonConvert.SerializeObject(ob));
+        }
+
         public List<SPY_Trading_Day> Trading_Days;
 
         public SPY_History()

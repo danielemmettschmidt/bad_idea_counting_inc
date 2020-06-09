@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Counting_Engine\Counting_Engine.csproj" />
-    <ProjectReference Include="..\Simulations\Simulation.csproj" />
     <ProjectReference Include="..\SPY_Data_Processor\SPY_Data_Processor.csproj" />
   </ItemGroup>
 
